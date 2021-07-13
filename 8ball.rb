@@ -1,40 +1,22 @@
-greetings = [
-  "Привет, дорогой друг. Отвечаю на твой вопрос...",
-  "Кто вопрошает, тот получит ответ:",
-  "Здравствуй, смертный. Сегодня для тебя такой ответ:"
-]
+current_path = File.dirname(__FILE__)
+path_to_files = "#{current_path}/txt_data"
+file_list = Dir.glob("#{path_to_files}/*.txt")
 
-answers = [
-  # Положительные
-  "Бесспорно",
-  "Предрешено",
-  "Никаких сомнений",
-  "Определённо да",
-  "Можешь быть уверен в этом",
+if file_list.empty?
+  abort('Папка для txt файлов пуста, заполните ее ответами (answers.txt) и приветствиями (greetings.txt)')
+end
 
-  # Нерешительно положительные
-  "Мне кажется — «да»",
-  "Вероятнее всего",
-  "Хорошие перспективы",
-  "Знаки говорят — «да»",
-  "Да",
+begin
+  greetings = File.readlines("#{__dir__}/txt_data/greetings.txt", chomp: true)
+  answers = File.readlines("#{__dir__}/txt_data/answers.txt", chomp: true)
 
-  # Нейтральные
-  "Пока не ясно, попробуй снова",
-  "Спроси позже",
-  "Лучше не рассказывать",
-  "Сейчас нельзя предсказать",
-  "Сконцентрируйся и спроси опять",
-
-  # Отрицательные
-  "Даже не думай",
-  "Мой ответ — «нет»",
-  "По моим данным — «нет»",
-  "Перспективы не очень хорошие",
-  "Весьма сомнительно"
-]
-
-puts greetings.sample
-sleep(2)
-puts
-puts answers.sample
+  puts greetings.sample
+  sleep(2)
+  puts
+  puts 'Генерирую ответ...'
+  sleep(2)
+  puts
+  puts answers.sample
+rescue Errno::ENOENT
+  puts 'Не удалось считать один из файлов, проверьте их наличие!'
+end
