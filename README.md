@@ -1,24 +1,26 @@
 8ball.rb
 ============
-"Быть иль не быть? Вот в чем вопрос? Что лучше?" (с) Гамлет
+"To be, or not to be, that is the question" (c) Hamlet
 
-Небольшой скрипт, который поможет тебе найти ответ на свой вопрос.
+Simple script helps you to answer your question and make a right decision (don't take seriously).
 
-Основано на мотивах [Magic 8 ball](https://ru.wikipedia.org/wiki/Magic_8_ball). 
+Read more about [Magic 8 ball](https://en.wikipedia.org/wiki/Magic_8-Ball). 
 
-Требования
+Requirements
 ----------------------------------
-1. Подготовленный к моменту запуска скрипта вопрос.
-2. Установленный интепретатор Ruby. (точно работает на ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux])
+1. Prepare your question.
+2. Installed Ruby interpreter (definately works on ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux])
 
-Запуск
+Launch
 ----------------------------------
-1. Запустите консоль (командную строку, терминал) в вашей системе, перейдите в папку скрипка и выполните команду:
+1. Clone it
+2. Move to folder you've cloned through terminal (cd path_to_cloned_proj)
+3. Run as mentioned: 
 ```
 ruby 8ball.rb
 ```
-2. Дождитесь выполнения.
-3. Получите ответ на свой вопрос!
+4. Wait for execution.
+5. Get your answer.
 ```
 Кто вопрошает, тот получит ответ:
 
@@ -26,14 +28,9 @@ ruby 8ball.rb
 
 Мой ответ — «нет»
 ```
-Модификации и распространение
+
+Modification & distribution
 ----------------------------------
-Скрипт предоставляется как есть, без каких-либо ограничений в использовании и модификации.
+Scipts provided as it is.
 
-В исходном коде 8ball.rb можно добавить дополнительные варианты ответов и приветствий (ответы — массив answers, 
-приветствия — массив greetings).
-
-
-
-
-
+In files greetings.txt and answers.txt you can add your questions and greetings phrases.
